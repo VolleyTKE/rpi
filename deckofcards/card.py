@@ -18,6 +18,12 @@ class Card:
 		else:
 			print("That's not a suit!")
 
+	@property
+	def number(self):
+		return self._number
+
+	@number.setter
+	def number(self, number)
 
 my_card = Card("hearts", "6")
 print(my_card)
