@@ -1,22 +1,31 @@
 from card import Card
 
+import random
+
 class Deck:
 
-	def __init__(self):
-		self.cards = []
-		self.populate()
-		print(self._cards)
+    def __init__(self):
+        self._cards = []
+        self.populate()
 
-	def populate(self):
-		suits = ["hearts", "clubs", "diamonds", "spades"]
-		numbers = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+    def populate(self):
+        suits = ["hearts", "clubs", "diamonds", "spades"]
+        numbers = [str(n) for n in range(2,11)] + ["J", "Q", "K", "A"]
+        self._cards = [ Card(s, n) for s in suits for n in numbers ]
 
-	cards = [] 
-	#self._cards = [ Cards(s, n) for s in suits for n in number]
-	for suit in suits:
-		for number in numbers:
-			cards.append( Card(suit, number) )
-	self._cards = cards
+    def shuffle(self):
+        random.shuffle(self._cards)
 
-my_deck = Deck()
+    def deal(self, no_of_cards):
+        dealt_cards = []
+        for i in range(no_of_cards):
+            dealt_card = self._cards.pop(0)
+            dealt_cards.append(dealt_card)
+        return dealt_cards
 
+    def __repr__(self):
+        cards_in_deck = len(self._cards)
+        return "Deck of " + str(cards_in_deck) + " cards"
+        
+deck = Deck()
+print(deck)

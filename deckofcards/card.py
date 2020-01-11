@@ -1,33 +1,31 @@
 class Card:
 
-	def __init__(self, suit, number):
-		self._suit = suit
-		self._number = number
+    def __init__(self, suit, number):
+        self._suit = suit
+        self._number = number
 
-	def __repr__(self):
-		return self._number + " of " + self._suit
-	
-	@property
-	def suit(self):
-		return self._suit
+    def __repr__(self):
+        return self._number + " of " + self._suit
 
-	@suit.setter
-	def suit(self, suit):
-		if suit in ["Hearts", "Clubs", "Diamonds", "Spades"]:
-			self._suit = suit
-		else:
-			print("That's not a suit!")
+    @property
+    def suit(self):
+        return self._suit
 
-	@property
-	def number(self):
-		return self._number
+    @suit.setter
+    def suit(self, suit):
+        if suit in ["hearts", "clubs", "diamonds", "spades"]:
+            self._suit = suit
+        else:
+            print("That's not a suit!")
 
-	@number.setter
-	def number(self, number)
+    @property
+    def number(self):
+        return self._number
 
-my_card = Card("hearts", "6")
-print(my_card)
-
-my_card.suit = "dinosaurs"
-print(my_card)
-
+    @number.setter
+    def number(self, number):
+        valid = [str(n) for n in range(2,11)] + ["J", "Q", "K", "A"]
+        if number in valid:
+            self._number = number
+        else:
+            print("That's not a valid number")
