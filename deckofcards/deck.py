@@ -29,3 +29,15 @@ class Deck:
         
 deck = Deck()
 print(deck)
+
+#uncomment a line at a time to see methods in action
+#hand = [deck.deal(4)]
+#print(hand)
+
+#print(deck)
+#deck.shuffle()
+
+#hand1 = [deck.deal(4)]
+#print(hand1)
+#print(deck)
+
