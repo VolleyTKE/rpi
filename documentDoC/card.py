@@ -11,10 +11,13 @@ class Card:
 
     @property
     def suit(self):
+        """Gets or sets the suit of the Card"""
         return self._suit
+    
 
     @suit.setter
     def suit(self, suit):
+        #no need for a docstring on a setter
         if suit in ["hearts", "clubs", "diamonds", "spades"]:
             self._suit = suit
         else:
@@ -22,6 +25,7 @@ class Card:
 
     @property
     def number(self):
+        """Gets or sets the number of the Card"""
         return self._number
 
     @number.setter

@@ -12,14 +12,17 @@ class Deck:
         self.populate()
 
     def populate(self):
+        """Creates a deck of cards"""
         suits = ["hearts", "clubs", "diamonds", "spades"]
         numbers = [str(n) for n in range(2,11)] + ["J", "Q", "K", "A"]
         self._cards = [ Card(s, n) for s in suits for n in numbers ]
 
     def shuffle(self):
+        """Uses random method to shuffle a deck object"""
         random.shuffle(self._cards)
 
     def deal(self, no_of_cards):
+        """takes a int to deal cards from a deck"""
         dealt_cards = []
         for i in range(no_of_cards):
             dealt_card = self._cards.pop(0)
