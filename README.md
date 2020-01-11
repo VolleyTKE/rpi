@@ -1,2 +1,2 @@
-# rpi
-stuff for rpi testing
+# Python RPI
+Learning Python using an RPi

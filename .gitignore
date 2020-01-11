@@ -1,3 +1,6 @@
 ls
 #ignore w4denv virtual env
 */d4wenv/*
+
+#ignore docenv virtual env
+*/docenv/*
